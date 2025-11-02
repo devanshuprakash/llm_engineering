@@ -11,7 +11,7 @@ headers = {
 def fetch_website_contents(url):
     """
     Return the title and contents of the website at the given url;
-    truncate to 2,000 characters as a sensible limit
+    truncate to 2000 characters as a sensible limit
     """
     response = requests.get(url, headers=headers)
     soup = BeautifulSoup(response.content, "html.parser")
@@ -22,7 +22,7 @@ def fetch_website_contents(url):
         text = soup.body.get_text(separator="\n", strip=True)
     else:
         text = ""
-    return (title + "\n\n" + text)[:2_000]
+    return (title + "\n\n" + text)[:2000]
 
 
 def fetch_website_links(url):
